@@ -1,0 +1,57 @@
+{
+  "expo": {
+    "name": "מלאי החנות",
+    "slug": "food-shop-inventory",
+    "scheme": "foodshopinventory",
+    "version": "1.1.0",
+    "orientation": "default",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "backgroundColor": "#F2F5F8",
+    "platforms": ["ios", "android"],
+    "locales": {
+      "he": "./languages/he.json"
+    },
+    "ios": {
+      "bundleIdentifier": "com.foodshop.inventory",
+      "buildNumber": "2",
+      "supportsTablet": true,
+      "infoPlist": {
+        "CFBundleDevelopmentRegion": "he",
+        "CFBundleAllowMixedLocalizations": true,
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSCameraUsageDescription": "האפליקציה זקוקה לגישה למצלמה כדי לסרוק ברקודים של מוצרים."
+      }
+    },
+    "android": {
+      "package": "com.foodshop.inventory",
+      "versionCode": 2,
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "plugins": [
+      "expo-router",
+      "expo-sqlite",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "האפליקציה זקוקה לגישה למצלמה כדי לסרוק ברקודים של מוצרים.",
+          "microphonePermission": false,
+          "recordAudioAndroid": false,
+          "barcodeScannerEnabled": true
+        }
+      ],
+      "./plugins/with-release-signing.js",
+      "./plugins/with-force-rtl.js",
+      "./plugins/with-hebrew-resources.js"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

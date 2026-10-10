@@ -1,0 +1,23 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // The app has no accounts, same as the original on-device inventory.
+    // Publish these rules in the Firebase console, then replace `if true`
+    // with a real auth or App Check check before anyone else can reach the project.
+    match /products/{id} {
+      allow read, write: if true;
+    }
+    match /orders/{id} {
+      allow read, write: if true;
+    }
+    match /deliveries/{id} {
+      allow read, write: if true;
+    }
+    match /history/{id} {
+      allow read, write: if true;
+    }
+    match /meta/{id} {
+      allow read, write: if true;
+    }
+  }
+}

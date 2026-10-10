@@ -1,0 +1,24 @@
+{
+  "cli": {
+    "version": ">= 16.0.0",
+    "appVersionSource": "local"
+  },
+  "build": {
+    "simulator": {
+      "distribution": "internal",
+      "environment": "production",
+      "ios": {
+        "simulator": true
+      }
+    },
+    "production": {
+      "environment": "production",
+      "android": {
+        "buildType": "apk"
+      },
+      "ios": {
+        "simulator": false
+      }
+    }
+  }
+}
